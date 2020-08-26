@@ -30,6 +30,7 @@ class Ics implements Generator
             'VERSION:2.0',
             'BEGIN:VEVENT',
             'UID:'.($this->options['UID'] ?? $this->generateEventUid($link)),
+            'DTSTAMP:'. date('Ymd').'T'.date('His').'Z',
             'SUMMARY:'.$this->escapeString($link->title),
         ];
 
